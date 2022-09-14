@@ -1,1 +1,0 @@
-const test = 'isso é um teste'
