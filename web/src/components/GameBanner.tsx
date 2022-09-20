@@ -16,7 +16,7 @@ export function GameBanner({ bannerUrl, title, adsCount }: GameBannerProps) {
         <strong className='text-white block text-base title-banner'>
           {title}
         </strong>
-        <span className='text-zinc-300 text-sm block'>
+        <span className='text-zinc-300 text-sm block truncate'>
           {adsCount} {adsCount === 1 ? 'anúncio' : 'anúncios'}
         </span>
       </div>
