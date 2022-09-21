@@ -24,8 +24,20 @@ app.get('/games', async (request, response) => {
       }
     }
   })
-
+  
   return response.json(games)
+})
+
+app.get('/games/:id', async (request, response) => {
+  const { id } = request.params
+
+  const game = await prisma.game.findUnique({
+    where: {
+      id
+    }
+  })
+
+  return response.json(game)
 })
 
 app.post('/games/:id/ads', async (request, response) => {
@@ -95,5 +107,6 @@ app.get('/ads/:id/discord', async (request, response) => {
 
   return response.json(discord)
 })
+
 
 app.listen(3333)

@@ -17,7 +17,7 @@ interface Game {
   }
 }
 
-function App() {
+export function App() {
   const [games, setGames] = useState<Game[]>([])
 
   useEffect(() => {
@@ -40,6 +40,7 @@ function App() {
         {games.map(game => (
           <GameBanner
             key={game.id}
+            id={game.id}
             bannerUrl={game.bannerUrl}
             title={game.title}
             adsCount={game._count.ads}
@@ -55,5 +56,3 @@ function App() {
     </div>
   )
 }
-
-export default App

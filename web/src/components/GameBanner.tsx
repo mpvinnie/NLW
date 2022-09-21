@@ -1,13 +1,16 @@
+import { Link } from 'react-router-dom'
+
 interface GameBannerProps {
+  id: string
   bannerUrl: string
   title: string
   adsCount: number
 }
 
-export function GameBanner({ bannerUrl, title, adsCount }: GameBannerProps) {
+export function GameBanner({ id, bannerUrl, title, adsCount }: GameBannerProps) {
   return (
-    <a href="" className='relative rounded-lg overflow-hidden'>
-      <img src={bannerUrl} alt=""
+    <Link to={`/games/${id}`} className='relative rounded-lg overflow-hidden'>
+      <img src={bannerUrl} alt={title}
         style={{
           width: '100%',
         }} 
@@ -20,6 +23,6 @@ export function GameBanner({ bannerUrl, title, adsCount }: GameBannerProps) {
           {adsCount} {adsCount === 1 ? 'anúncio' : 'anúncios'}
         </span>
       </div>
-    </a>
+    </Link>
   )
 }
